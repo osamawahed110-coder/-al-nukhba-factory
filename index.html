@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مصنع النخبة للأشرطة النسيجية ومستلزمات الإنتاج</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & VARIABLES ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold:       #B8860B;
+  --gold-light: #D4A017;
+  --dark:       #0E0E0E;
+  --dark-2:     #1A1A1A;
+  --dark-3:     #242424;
+  --white:      #ffffff;
+  --border:     rgba(184,134,11,0.2);
+  --radius:     4px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: var(--dark);
+  color: var(--white);
+  overflow-x: hidden;
+  direction: rtl;
+}
+
+/* subtle noise */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 0; opacity: 0.6;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 4rem;
+  background: rgba(14,14,14,0.88);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.nav-logo {
+  font-weight: 800; font-size: 1.05rem;
+  color: var(--gold-light); text-decoration: none;
+}
+.nav-logo span { color: rgba(255,255,255,0.55); font-weight: 400; }
+.nav-logo-img { width: 28px; height: 28px; object-fit: contain; border-radius: 3px; vertical-align: middle; margin-left: 0.5rem; }
+
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,0.6); text-decoration: none;
+  font-size: 0.88rem; font-weight: 400; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold-light); }
+
+.nav-cta {
+  background: var(--gold); color: var(--dark) !important;
+  padding: 0.5rem 1.3rem; border-radius: 2px;
+  font-weight: 700 !important; font-size: 0.88rem !important;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--gold-light) !important; }
+
+/* ─── BUTTONS ─── */
+.btn-primary {
+  display: inline-block; background: var(--gold); color: var(--dark);
+  padding: 0.95rem 2.2rem; font-family: 'Tajawal', sans-serif;
+  font-size: 0.95rem; font-weight: 700; border: none; border-radius: 2px;
+  cursor: pointer; text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+.btn-outline {
+  display: inline-block; background: transparent; color: var(--white);
+  padding: 0.95rem 2.2rem; font-family: 'Tajawal', sans-serif;
+  font-size: 0.95rem; font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.22); border-radius: 2px;
+  cursor: pointer; text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold-light); transform: translateY(-2px); }
+
+/* ─── SECTION COMMON ─── */
+section { position: relative; z-index: 2; padding: 6rem 4rem; }
+
+/* Section headers centered by default */
+.section-header {
+  text-align: center; max-width: 700px;
+  margin: 0 auto 3.5rem;
+}
+.section-header .section-eyebrow { justify-content: center; }
+.section-header .section-title { margin-left: auto; margin-right: auto; }
+.section-header .section-desc { margin: 0.6rem auto 0; }
+
+.section-eyebrow {
+  display: flex; align-items: center; gap: 0.7rem;
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.25em;
+  color: var(--gold); text-transform: uppercase; margin-bottom: 0.8rem;
+}
+.section-eyebrow::before,
+.section-eyebrow::after {
+  content: ''; display: block; flex: 1; max-width: 40px; height: 1px;
+  background: var(--gold); opacity: 0.45;
+}
+
+.section-title {
+  font-size: clamp(1.9rem, 3.5vw, 3rem);
+  font-weight: 800; line-height: 1.2; margin-bottom: 0.8rem;
+}
+
+.section-desc {
+  font-size: 0.97rem; font-weight: 300;
+  color: rgba(255,255,255,0.5); line-height: 1.85; max-width: 520px;
+}
+
+.gold-line { width: 56px; height: 2px; background: var(--gold); margin: 0.9rem auto; opacity: 0.55; }
+
+/* Scroll-reveal base states */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.up   { transform: translateY(28px); }
+.reveal.left { transform: translateX(28px); }
+.reveal.right{ transform: translateX(-28px); }
+.reveal.visible { opacity: 1 !important; transform: none !important; }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh; display: flex; align-items: center;
+  justify-content: center; overflow: hidden; padding: 0 2rem;
+  position: relative;
+}
+
+.hero-bg-img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.06);
+  animation: heroZoom 18s ease-in-out infinite alternate;
+}
+@keyframes heroZoom {
+  from { transform: scale(1.06); }
+  to   { transform: scale(1.14); }
+}
+
+.hero-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(10,8,6,0.72) 0%, rgba(10,8,6,0.55) 40%, rgba(10,8,6,0.82) 100%),
+    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(184,134,11,0.07) 0%, transparent 70%);
+}
+
+.hero-inner {
+  position: relative; z-index: 2; text-align: center; max-width: 860px;
+  animation: fadeUp 1s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.8rem;
+  font-size: 0.74rem; font-weight: 500; letter-spacing: 0.22em;
+  color: var(--gold-light); text-transform: uppercase; margin-bottom: 2rem;
+  animation: fadeUp 1s 0.1s ease both;
+}
+.eyebrow-line {
+  display: block; width: 36px; height: 1px;
+  background: var(--gold); opacity: 0.65; flex-shrink: 0;
+}
+
+.hero-title {
+  font-size: clamp(2.6rem, 5.5vw, 5rem);
+  font-weight: 900; line-height: 1.1; margin-bottom: 1rem;
+  animation: fadeUp 1s 0.18s ease both;
+}
+.hero-title .gold { color: var(--gold-light); }
+
+.hero-subtitle {
+  font-size: clamp(0.95rem, 1.8vw, 1.2rem); font-weight: 300;
+  color: rgba(255,255,255,0.52); line-height: 1.75;
+  max-width: 580px; margin: 0 auto 2.5rem;
+  animation: fadeUp 1s 0.26s ease both;
+}
+
+.hero-actions {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  animation: fadeUp 1s 0.34s ease both;
+}
+
+/* scroll hint — أسفل الزرار مباشرة */
+.scroll-hint {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 0.35rem; margin-top: 2.8rem;
+  animation: fadeUp 1s 0.55s ease both;
+  color: rgba(255,255,255,0.32); font-size: 0.64rem; letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.scroll-hint span:first-child { animation: bounce 2.2s 1.8s ease infinite; display: block; }
+.scroll-line {
+  display: block; width: 1px; height: 48px;
+  background: linear-gradient(to bottom, rgba(184,134,11,0.55), transparent);
+  animation: growLine 1.2s 0.7s ease both;
+}
+@keyframes growLine {
+  from { transform: scaleY(0); transform-origin: top; }
+  to   { transform: scaleY(1); transform-origin: top; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(7px); }
+}
+
+/* ─── STATS BAND ─── */
+.stats-band {
+  position: relative; z-index: 2;
+  background: var(--dark-2);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 2.8rem 4rem;
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 0;
+}
+
+.stat-item {
+  text-align: center; padding: 1rem 1.5rem;
+  border-left: 1px solid rgba(184,134,11,0.15);
+  opacity: 0; transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.stat-item:last-child { border-left: none; }
+.stat-item.visible { opacity: 1; transform: none; }
+
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem; font-weight: 600;
+  color: var(--gold-light); line-height: 1; margin-bottom: 0.3rem;
+}
+.stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.42); letter-spacing: 0.08em; }
+
+/* ─── PRODUCTS ─── */
+.products-section { background: var(--dark); }
+
+.products-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 2px;
+}
+
+.product-card {
+  position: relative; overflow: hidden; aspect-ratio: 4/3;
+  cursor: pointer;
+}
+.product-card.large { grid-column: span 2; aspect-ratio: unset; min-height: 300px; }
+
+.product-card-bg {
+  width: 100%; height: 100%; position: absolute; inset: 0;
+  object-fit: cover; display: block;
+  transition: transform 0.55s ease;
+}
+.product-card:hover .product-card-bg { transform: scale(1.08); }
+
+.product-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.08) 55%, transparent 100%);
+}
+
+.product-card-content {
+  position: absolute; bottom: 0; right: 0; left: 0;
+  padding: 1.4rem; transform: translateY(4px);
+  transition: transform 0.35s ease;
+}
+.product-card:hover .product-card-content { transform: translateY(0); }
+
+.product-card-tag {
+  display: inline-block; background: var(--gold); color: var(--dark);
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em;
+  padding: 0.22rem 0.65rem; margin-bottom: 0.5rem; text-transform: uppercase;
+}
+
+.product-card-name { font-size: 1.1rem; font-weight: 700; line-height: 1.3; }
+
+.product-card-desc {
+  font-size: 0.8rem; color: rgba(255,255,255,0.58); margin-top: 0.3rem;
+  opacity: 0; transform: translateY(7px);
+  transition: opacity 0.3s 0.04s, transform 0.3s 0.04s;
+}
+.product-card:hover .product-card-desc { opacity: 1; transform: translateY(0); }
+
+/* ─── CATALOGS ─── */
+.catalog-section { background: var(--dark-2); border-top: 1px solid var(--border); }
+
+.catalog-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; max-width: 860px; margin: 3rem auto 0;
+}
+
+.catalog-card {
+  display: flex; align-items: center; gap: 1.4rem;
+  background: var(--dark-3); border: 1px solid rgba(184,134,11,0.14);
+  border-radius: var(--radius); padding: 1.8rem 1.6rem;
+  text-decoration: none; color: inherit;
+  position: relative; overflow: hidden;
+  transition: border-color 0.3s, transform 0.25s, box-shadow 0.3s, background 0.3s;
+  cursor: pointer;
+}
+.catalog-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(184,134,11,0.04) 0%, transparent 60%);
+}
+.catalog-card:hover {
+  border-color: var(--gold-light); transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(184,134,11,0.18);
+  background: rgba(184,134,11,0.05);
+}
+
+.catalog-icon {
+  font-size: 2.4rem; flex-shrink: 0; line-height: 1;
+  filter: drop-shadow(0 2px 6px rgba(184,134,11,0.3));
+}
+.catalog-info { flex: 1; }
+.catalog-name { font-size: 0.98rem; font-weight: 700; color: var(--gold-light); margin-bottom: 0.45rem; line-height: 1.3; }
+.catalog-desc { font-size: 0.78rem; color: rgba(255,255,255,0.38); line-height: 1.65; }
+.catalog-arrow { font-size: 1.3rem; color: var(--gold); opacity: 0.45; flex-shrink: 0; transition: opacity 0.2s, transform 0.2s; }
+.catalog-card:hover .catalog-arrow { opacity: 1; transform: translateX(-4px); }
+
+/* ─── WHY US ─── */
+.features-section {
+  background: var(--dark-2);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+
+.features-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+
+.features-list { display: flex; flex-direction: column; gap: 1.8rem; margin-top: 2.5rem; }
+
+.feature-icon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  border: 1px solid var(--border); border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; color: var(--gold-light);
+  background: rgba(184,134,11,0.06);
+}
+.feature-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.25rem; }
+.feature-desc { font-size: 0.84rem; color: rgba(255,255,255,0.42); line-height: 1.7; }
+
+.visual-card {
+  background: var(--dark-3); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 2.2rem; text-align: center; position: relative;
+}
+.quality-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 1.8rem; }
+.quality-badge {
+  background: rgba(184,134,11,0.06); border: 1px solid rgba(184,134,11,0.14);
+  border-radius: 2px; padding: 1.1rem;
+}
+.quality-badge .num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.3rem; font-weight: 600; color: var(--gold-light); display: block;
+}
+.quality-badge .lbl { font-size: 0.75rem; color: rgba(255,255,255,0.38); letter-spacing: 0.08em; margin-top: 0.15rem; display: block; }
+
+/* ─── PROCESS ─── */
+.process-section { background: var(--dark); }
+
+.process-steps {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 0; margin-top: 4rem; position: relative;
+}
+.process-steps::before {
+  content: ''; position: absolute; top: 23px; right: 12%; left: 12%;
+  height: 1px; background: linear-gradient(to left, transparent, var(--gold), transparent); opacity: 0.28;
+}
+.process-step { text-align: center; padding: 0 1.2rem; }
+
+.step-number {
+  width: 46px; height: 46px; background: var(--dark-2);
+  border: 1px solid var(--gold); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.4rem;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600;
+  color: var(--gold-light);
+}
+.step-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.45rem; }
+.step-desc { font-size: 0.8rem; color: rgba(255,255,255,0.38); line-height: 1.7; }
+
+/* ─── TESTIMONIALS ─── */
+.testimonials-section { background: var(--dark-2); border-top: 1px solid var(--border); }
+
+.testimonials-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 1.3rem; margin-top: 3.5rem;
+}
+
+.testimonial-card {
+  background: var(--dark-3); border: 1px solid rgba(184,134,11,0.1);
+  border-radius: 2px; padding: 1.8rem; position: relative;
+}
+.testimonial-card:hover { border-color: rgba(184,134,11,0.35); }
+
+.testimonial-quote {
+  font-family: 'Cormorant Garamond', serif; font-size: 3rem;
+  color: var(--gold); opacity: 0.18; line-height: 1;
+  position: absolute; top: 0.9rem; right: 1.3rem;
+}
+.stars { display: flex; gap: 2px; margin-bottom: 0.9rem; }
+.star { color: var(--gold); font-size: 0.76rem; }
+.testimonial-text { font-size: 0.88rem; color: rgba(255,255,255,0.58); line-height: 1.8; margin-bottom: 1.3rem; }
+.testimonial-author { display: flex; align-items: center; gap: 0.75rem; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1rem; }
+.author-avatar {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(184,134,11,0.14); border: 1px solid rgba(184,134,11,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: 700; color: var(--gold-light);
+}
+.author-name { font-size: 0.88rem; font-weight: 700; }
+.author-role { font-size: 0.72rem; color: rgba(255,255,255,0.32); }
+
+/* ─── CTA ─── */
+.cta-section {
+  background: var(--dark); padding: 7rem 4rem;
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: ''; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 560px; height: 560px;
+  background: radial-gradient(circle, rgba(184,134,11,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-inner { position: relative; z-index: 2; max-width: 660px; margin: 0 auto; }
+.cta-title { font-size: clamp(1.9rem, 3.8vw, 3.3rem); font-weight: 900; margin-bottom: 1rem; line-height: 1.2; }
+.cta-title .gold { color: var(--gold-light); }
+.cta-desc { font-size: 1rem; color: rgba(255,255,255,0.42); line-height: 1.8; margin-bottom: 2.8rem; }
+
+.cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.cta-contact-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 2.8rem; }
+.contact-item {
+  background: var(--dark-2); border: 1px solid var(--border);
+  border-radius: 2px; padding: 1.3rem 0.9rem; text-align: center;
+  transition: border-color 0.25s; text-decoration: none; color: inherit; display: block;
+}
+.contact-item:hover { border-color: var(--gold); }
+.contact-icon { font-size: 1.4rem; margin-bottom: 0.5rem; display: block; }
+.contact-label { font-size: 0.68rem; color: rgba(255,255,255,0.32); letter-spacing: 0.1em; display: block; margin-bottom: 0.25rem; }
+.contact-value { font-size: 0.9rem; font-weight: 700; color: var(--gold-light); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--dark-2); border-top: 1px solid var(--border);
+  padding: 2.8rem 4rem;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 2rem; flex-wrap: wrap;
+}
+
+.footer-logo { font-size: 1rem; font-weight: 800; color: var(--gold-light); }
+.footer-logo span { color: rgba(255,255,255,0.38); font-size: 0.78rem; font-weight: 400; display: block; margin-top: 0.18rem; }
+
+.footer-copy { font-size: 0.76rem; color: rgba(255,255,255,0.22); }
+
+.footer-links { display: flex; gap: 1.8rem; list-style: none; }
+.footer-links a { color: rgba(255,255,255,0.33); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold-light); }
+
+/* ─── POWERED BY BAR ─── */
+.powered-by-bar {
+  background: #0a0a0a; border-top: 1px solid rgba(184,134,11,0.07);
+  padding: 0.9rem 4rem; display: flex; justify-content: center; align-items: center;
+}
+.powered-by-link {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  text-decoration: none; opacity: 0.45; transition: opacity 0.25s;
+}
+.powered-by-link:hover { opacity: 1; }
+.powered-by-link img { width: 20px; height: 20px; object-fit: contain; }
+.powered-by-text { font-size: 0.68rem; color: rgba(255,255,255,0.45); letter-spacing: 0.04em; }
+.powered-by-text b { color: rgba(184,134,11,0.85); font-weight: 700; letter-spacing: 0.08em; }
+
+/* ─── WHATSAPP FLOAT ─── */
+.wa-float {
+  position: fixed; bottom: 2.2rem; left: 2rem; z-index: 999;
+  width: 54px; height: 54px; background: #25D366;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 18px rgba(37,211,102,0.35); text-decoration: none;
+  transition: transform 0.25s, box-shadow 0.25s;
+  animation: pulse-wa 3s 2s ease infinite;
+}
+.wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.5); }
+.wa-float svg { width: 26px; height: 26px; fill: white; }
+
+@keyframes pulse-wa {
+  0%, 100% { box-shadow: 0 4px 18px rgba(37,211,102,0.35); }
+  50%       { box-shadow: 0 4px 32px rgba(37,211,102,0.6), 0 0 0 9px rgba(37,211,102,0.08); }
+}
+
+/* ─── RESPONSIVE: TABLET 769–1024 ─── */
+@media (max-width: 1024px) and (min-width: 769px) {
+  nav { padding: 1rem 2rem; }
+  .nav-links { gap: 1.2rem; }
+  .nav-links a { font-size: 0.82rem; }
+  section { padding: 5rem 2.5rem; }
+  .cta-section { padding: 5rem 2.5rem; }
+  .stats-band { padding: 2rem 2.5rem; }
+  .products-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
+  .product-card.large { grid-column: span 2; min-height: 260px; }
+  .features-layout { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+  .process-steps::before { display: none; }
+  .testimonials-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .cta-contact-grid { grid-template-columns: 1fr 1fr; }
+  .catalog-grid { grid-template-columns: 1fr 1fr; max-width: 100%; }
+  footer { padding: 2rem 2.5rem; gap: 1.5rem; }
+  .powered-by-bar { padding: 0.8rem 2.5rem; }
+}
+
+/* ─── RESPONSIVE: MOBILE ≤768 ─── */
+@media (max-width: 768px) {
+  nav { padding: 0.9rem 1.2rem; }
+  #menu-btn { display: flex !important; }
+  .nav-links {
+    display: none; position: fixed; top: 56px; right: 0; left: 0;
+    background: rgba(8,7,5,0.98); backdrop-filter: blur(20px);
+    flex-direction: column; padding: 1.2rem; gap: 0; z-index: 99;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links.nav-open { display: flex; }
+  .nav-links li { border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .nav-links a { display: block; padding: 0.85rem 0.5rem; font-size: 1rem; }
+  .nav-cta { display: inline-block; margin: 0.6rem 0; }
+  section { padding: 3.5rem 1.2rem; }
+  .section-header { margin-bottom: 2.2rem; }
+  .cta-section { padding: 4rem 1.2rem; }
+
+  .hero { min-height: 100svh; padding: 0 1.2rem; }
+  .hero-inner { padding-top: 5rem; }
+  .hero-title { font-size: clamp(2rem, 8vw, 2.6rem); }
+  .hero-subtitle { font-size: 0.9rem; margin-bottom: 2rem; }
+  .hero-eyebrow { font-size: 0.68rem; margin-bottom: 1.2rem; }
+  .hero-actions { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+  .hero-actions .btn-primary, .hero-actions .btn-outline { width: 100%; text-align: center; padding: 0.9rem 1.5rem; }
+  .scroll-hint { margin-top: 2rem; }
+
+  .stats-band { grid-template-columns: 1fr 1fr; padding: 1.5rem 1.2rem; gap: 0; }
+  .stat-item { border-left: none; border-bottom: 1px solid rgba(184,134,11,0.1); padding: 1rem 0.8rem; }
+  .stat-item:nth-child(odd) { border-right: 1px solid rgba(184,134,11,0.1); }
+  .stat-item:nth-last-child(-n+2) { border-bottom: none; }
+  .stat-number { font-size: 2.2rem; }
+  .stat-label { font-size: 0.72rem; }
+
+  .section-title { font-size: clamp(1.6rem, 6vw, 2rem); }
+  .products-grid { grid-template-columns: 1fr; gap: 3px; }
+  .product-card.large { grid-column: span 1; min-height: 200px; aspect-ratio: 16/9; }
+  .product-card { aspect-ratio: 4/3; }
+  .product-card-name { font-size: 0.98rem; }
+
+  .features-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .features-visual { display: none; }
+  .features-list { gap: 1.3rem; margin-top: 1.5rem; }
+  .feature-title { font-size: 0.9rem; }
+
+  .process-steps { grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1.8rem; }
+  .process-steps::before { display: none; }
+  .process-step { padding: 0 0.3rem; }
+  .step-title { font-size: 0.88rem; }
+  .step-desc { font-size: 0.75rem; }
+  .step-number { width: 38px; height: 38px; font-size: 1rem; margin-bottom: 1rem; }
+
+  .testimonials-grid { grid-template-columns: 1fr; gap: 0.9rem; }
+
+  .cta-title { font-size: clamp(1.7rem, 6vw, 2.2rem); }
+  .cta-contact-grid { grid-template-columns: 1fr; gap: 0.7rem; margin-top: 1.8rem; }
+  .cta-btns { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+  .cta-btns .btn-primary, .cta-btns .btn-outline { text-align: center; }
+
+  .catalog-section { padding: 3.5rem 1.2rem; }
+  .catalog-grid { grid-template-columns: 1fr; max-width: 100%; margin-top: 1.8rem; gap: 0.9rem; }
+  .catalog-card { padding: 1.2rem 1rem; gap: 0.9rem; flex-direction: row; align-items: center; }
+  .catalog-icon { font-size: 2rem; }
+  .catalog-name { font-size: 0.92rem; }
+  .catalog-desc { font-size: 0.74rem; }
+  .catalog-arrow { display: none; }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.2rem;
+    gap: 1.2rem;
+    text-align: center;
+  }
+  .footer-logo { text-align: center; }
+  .footer-links { flex-wrap: wrap; gap: 0.8rem 1.2rem; justify-content: center; }
+  .footer-copy { text-align: center; order: 3; }
+
+  .powered-by-bar { padding: 0.9rem 1.2rem; }
+  .powered-by-link { gap: 0.5rem; }
+
+  .wa-float { bottom: 1.2rem; left: 0.8rem; width: 46px; height: 46px; }
+  .wa-float svg { width: 22px; height: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+/* ─── TINY ≤380 ─── */
+@media (max-width: 380px) {
+  .hero-title { font-size: 1.85rem; }
+  .process-steps { grid-template-columns: 1fr; }
+  .stats-band { grid-template-columns: 1fr 1fr; }
+  .cta-contact-grid { grid-template-columns: 1fr; }
+  nav { padding: 0.8rem 1rem; }
+}
+
+/* ══ ADVANCED ANIMATIONS ══ */
+
+/* Parallax tilt on product cards */
+.product-card { transform-style: preserve-3d; perspective: 800px; }
+.product-card:hover { transform: perspective(800px) rotateX(2deg) rotateY(-2deg) scale(1.02); transition: transform 0.4s ease; }
+.product-card.large:hover { transform: perspective(1200px) rotateX(1deg) scale(1.01); }
+
+/* Gold shimmer on tags */
+.product-card-tag {
+  position: relative; overflow: hidden;
+  animation: none;
+}
+.product-card-tag::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.4) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0s;
+}
+.product-card:hover .product-card-tag::after {
+  transform: translateX(200%);
+  transition: transform 0.6s ease;
+}
+
+/* Section eyebrow slide-in */
+.section-eyebrow { overflow: hidden; }
+
+/* Floating stats animation */
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
+}
+.quality-badge:nth-child(1) { animation: floatUp 4s 0s ease-in-out infinite; }
+.quality-badge:nth-child(2) { animation: floatUp 4s 0.5s ease-in-out infinite; }
+.quality-badge:nth-child(3) { animation: floatUp 4s 1s ease-in-out infinite; }
+.quality-badge:nth-child(4) { animation: floatUp 4s 1.5s ease-in-out infinite; }
+
+/* Feature items slide from right */
+.feature-item {
+  opacity: 0; transform: translateX(30px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.feature-item.visible { opacity: 1; transform: none; }
+.feature-item:nth-child(2) { transition-delay: 0.12s; }
+.feature-item:nth-child(3) { transition-delay: 0.24s; }
+.feature-item:nth-child(4) { transition-delay: 0.36s; }
+
+/* Process step pop-in */
+.process-step {
+  opacity: 0; transform: translateY(24px) scale(0.96);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.process-step.visible { opacity: 1; transform: none; }
+.process-step:nth-child(2) { transition-delay: 0.12s; }
+.process-step:nth-child(3) { transition-delay: 0.24s; }
+.process-step:nth-child(4) { transition-delay: 0.36s; }
+
+/* Step number pulse on hover */
+.process-step:hover .step-number {
+  background: var(--gold); color: var(--dark);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Testimonial card slide up */
+.testimonial-card {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.testimonial-card.visible { opacity: 1; transform: none; }
+.testimonial-card:nth-child(2) { transition-delay: 0.15s; }
+.testimonial-card:nth-child(3) { transition-delay: 0.3s; }
+
+/* Catalog card reveal */
+.catalog-card {
+  opacity: 0; transform: translateY(20px) scale(0.97);
+  transition: opacity 0.5s ease, transform 0.5s ease,
+              border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+.catalog-card.visible { opacity: 1; transform: none; }
+.catalog-card:nth-child(2) { transition-delay: 0.15s; }
+
+/* CTA section pulse glow */
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.07; transform: translate(-50%,-50%) scale(1); }
+  50%       { opacity: 0.13; transform: translate(-50%,-50%) scale(1.08); }
+}
+.cta-section::before { animation: glowPulse 5s ease-in-out infinite; }
+
+/* Stat number gold glow on count finish */
+.stat-number { transition: color 0.3s, text-shadow 0.3s; }
+.stat-item.visible .stat-number {
+  text-shadow: 0 0 28px rgba(184,134,11,0.35);
+}
+
+/* Nav link underline slide */
+.nav-links a { position: relative; }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -2px; right: 0;
+  width: 0; height: 1px; background: var(--gold-light);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover::after { width: 100%; }
+
+/* Scroll-reveal: catalog section header */
+.catalog-section .section-header,
+.features-section .section-header,
+.process-section .section-header,
+.testimonials-section .section-header,
+.products-section .section-header {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.catalog-section .section-header.visible,
+.features-section .section-header.visible,
+.process-section .section-header.visible,
+.testimonials-section .section-header.visible,
+.products-section .section-header.visible { opacity: 1; transform: none; }
+
+/* Image zoom on card hover (override) */
+.product-card-bg { transition: transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94); }
+.product-card:hover .product-card-bg { transform: scale(1.1); }
+
+/* Gold border glow on catalog hover */
+.catalog-card:hover {
+  box-shadow: 0 12px 36px rgba(184,134,11,0.18), 0 0 0 1px rgba(184,134,11,0.3);
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo"><img src="images/logo-nav.jpg" alt="مصنع النخبة" class="nav-logo-img">النخبة <span>للأشرطة النسيجية</span></a>
+  <button id="menu-btn" aria-label="القائمة" aria-expanded="false" style="display:none;background:none;border:1px solid var(--border);color:var(--gold-light);padding:0.4rem 0.7rem;border-radius:3px;cursor:pointer;font-size:1.2rem">☰</button>
+  <ul class="nav-links">
+    <li><a href="#products">منتجاتنا</a></li>
+    <li><a href="#catalogs">الكتالوجات</a></li>
+    <li><a href="#why-us">لماذا نحن</a></li>
+    <li><a href="#process">كيف نعمل</a></li>
+    <li><a href="#contact" class="nav-cta">تواصل معنا</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-img" style="background-image:url('images/hero-background.jpg')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-line"></span>
+      مصنع النخبة · القاهرة، مصر
+      <span class="eyebrow-line"></span>
+    </div>
+    <h1 class="hero-title">الجودة في كل<br><span class="gold">شريط وتفصيلة</span></h1>
+    <p class="hero-subtitle">مصنع النخبة للأشرطة النسيجية ومستلزمات الإنتاج — نقدم أرقى الشرائط والإكسسوارات النسيجية بأعلى معايير الجودة لخدمة صناعة الملابس والأزياء</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">اطلب عينة مجانية</a>
+      <a href="#products" class="btn-outline">تصفح المنتجات</a>
+    </div>
+    <div class="scroll-hint">
+      <span>اكتشف</span>
+      <span class="scroll-line"></span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stat-item"><div class="stat-number" data-target="15">0</div><div class="stat-label">سنوات خبرة في السوق</div></div>
+  <div class="stat-item"><div class="stat-number" data-target="500">0</div><div class="stat-label">عميل راضٍ في مصر والخليج</div></div>
+  <div class="stat-item"><div class="stat-number" data-target="200">0</div><div class="stat-label">تصميم ونوع متاح</div></div>
+  <div class="stat-item"><div class="stat-number" data-target="100">0</div><div class="stat-label">% ضمان جودة المنتج</div></div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products-section" id="products">
+  <div class="section-header">
+    <div class="section-eyebrow">منتجاتنا</div>
+    <h2 class="section-title">كل ما تحتاجه في مكان واحد</h2>
+    <p class="section-desc">من الشرائط المطاطية والنسيجية إلى الكوردونات والشيلدات المعدنية — مجموعة كاملة تغطي جميع احتياجات مصانع الملابس</p>
+  </div>
+
+  <div class="products-grid">
+    <!-- Card 1: Large -->
+    <div class="product-card large reveal up">
+      <img class="product-card-bg" src="images/product-ribbons.jpg" alt="شرائط نسيجية" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div class="product-card-overlay"></div>
+      <div class="product-card-content">
+        <div class="product-card-tag">الأكثر طلباً</div>
+        <div class="product-card-name">شرائط نسيجية</div>
+        <div class="product-card-desc">متوفرة بجميع الألوان والمقاسات — تنوع هائل يناسب جميع احتياجات الإنتاج</div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="product-card reveal up">
+      <img class="product-card-bg" src="images/product-patches.jpg" alt="باتشات PVC" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div class="product-card-overlay"></div>
+      <div class="product-card-content">
+        <div class="product-card-tag">إكسسوار</div>
+        <div class="product-card-name">باتشات PVC ومطرزة</div>
+        <div class="product-card-desc">تصاميم متعددة وألوان متنوعة</div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="product-card reveal up">
+      <img class="product-card-bg" src="images/product-metal.jpg" alt="شيلدات معدنية" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div class="product-card-overlay"></div>
+      <div class="product-card-content">
+        <div class="product-card-tag">معدن</div>
+        <div class="product-card-name">شيلدات معدنية</div>
+        <div class="product-card-desc">أشكال وأحجام متنوعة — تشطيب فاخر</div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="product-card reveal up">
+      <img class="product-card-bg" src="images/product-cords.jpg" alt="كوردونات أحذية" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div class="product-card-overlay"></div>
+      <div class="product-card-content">
+        <div class="product-card-tag">كوردونات</div>
+        <div class="product-card-name">أربطة وكوردونات أحذية</div>
+        <div class="product-card-desc">خامات عالية الجودة بأطراف متنوعة</div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="product-card reveal up">
+      <img class="product-card-bg" src="images/product-leather.jpg" alt="لابيلات جلدية" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div class="product-card-overlay"></div>
+      <div class="product-card-content">
+        <div class="product-card-tag">جلد</div>
+        <div class="product-card-name">لابيلات جلدية</div>
+        <div class="product-card-desc">جلد طبيعي وصناعي بتصاميم فاخرة</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGS -->
+<section class="catalog-section" id="catalogs">
+  <div class="section-header">
+    <div class="section-eyebrow">الكتالوجات</div>
+    <h2 class="section-title">تصفح كتالوجاتنا الكاملة</h2>
+    <p class="section-desc">اطلع على مجموعتنا الكاملة من الشرائط والإكسسوارات وحمّل الكتالوج الذي يناسبك مباشرة</p>
+  </div>
+  <div class="catalog-grid">
+    <a href="AL-Nokhba_Catalog_V1.pdf" download="كتالوج_النخبة_الشرائط.pdf" class="catalog-card reveal up">
+      <div class="catalog-icon">📋</div>
+      <div class="catalog-info">
+        <div class="catalog-name">كتالوج الشرائط النسيجية</div>
+        <div class="catalog-desc">174 منتج · شرائط مطاطية، مجدولة، هرينجبون، ساتان، فيلكرو، مطبوعة، بولي برو</div>
+      </div>
+      <div class="catalog-arrow">⬇</div>
+    </a>
+    <a href="Elite-Accessories_Catalog-V1.pdf" download="كتالوج_النخبة_الإكسسوارات.pdf" class="catalog-card reveal up">
+      <div class="catalog-icon">📂</div>
+      <div class="catalog-info">
+        <div class="catalog-name">كتالوج الإكسسوارات</div>
+        <div class="catalog-desc">48 منتج · شرائط مطبوعة، باتشات، شيلدات معدنية، كوردونات، لابيلات جلدية</div>
+      </div>
+      <div class="catalog-arrow">⬇</div>
+    </a>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="features-section" id="why-us">
+  <div class="section-header" style="margin-bottom:3rem">
+    <div class="section-eyebrow">لماذا النخبة</div>
+    <h2 class="section-title">نميزك عن المنافسين</h2>
+    <p class="section-desc">نحن لا نبيع فقط — نحن شركاء نجاحك في صناعة الملابس والأزياء</p>
+  </div>
+  <div class="features-layout">
+    <div>
+      <div class="features-list">
+        <div class="feature-item"><div class="feature-icon">✦</div><div><div class="feature-title">جودة مضمونة 100%</div><div class="feature-desc">كل منتج يمر بمراحل فحص صارمة قبل الشحن — رضاك هو معيارنا</div></div></div>
+        <div class="feature-item"><div class="feature-icon">◈</div><div><div class="feature-title">تنوع لا مثيل له</div><div class="feature-desc">أكثر من 200 تصميم ونوع — من الشرائط البسيطة إلى الإكسسوارات الفاخرة</div></div></div>
+        <div class="feature-item"><div class="feature-icon">◎</div><div><div class="feature-title">تصاميم مخصصة</div><div class="feature-desc">نصنع حسب طلبك — مقاسك ولونك وتصميمك بأسرع وقت وأفضل سعر</div></div></div>
+        <div class="feature-item"><div class="feature-icon">⬡</div><div><div class="feature-title">توصيل لجميع المحافظات</div><div class="feature-desc">نوصل لك أينما كنت في مصر — بسرعة وأمان مضمون</div></div></div>
+      </div>
+    </div>
+    <div class="features-visual">
+      <div class="visual-card">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:6rem;font-weight:600;color:var(--gold-light);opacity:0.12;position:absolute;top:0.8rem;right:1.5rem;line-height:1">✦</div>
+        <div class="quality-badges">
+          <div class="quality-badge"><span class="num">15+</span><span class="lbl">سنة خبرة</span></div>
+          <div class="quality-badge"><span class="num">500+</span><span class="lbl">عميل</span></div>
+          <div class="quality-badge"><span class="num">200+</span><span class="lbl">تصميم</span></div>
+          <div class="quality-badge"><span class="num">100%</span><span class="lbl">ضمان</span></div>
+        </div>
+        <div style="margin-top:1.8rem;padding-top:1.8rem;border-top:1px solid rgba(184,134,11,0.14)">
+          <p style="font-size:0.82rem;color:rgba(255,255,255,0.38);line-height:1.8;text-align:center">"مصنع النخبة خيارنا الأول منذ سنوات — جودة عالية وتسليم في الموعد دائماً"</p>
+          <div style="text-align:center;margin-top:0.8rem;font-size:0.75rem;color:var(--gold);letter-spacing:0.1em">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section" id="process">
+  <div class="section-header">
+    <div class="section-eyebrow">كيف نعمل</div>
+    <h2 class="section-title">من طلبك إلى بابك في 4 خطوات</h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step"><div class="step-number">١</div><div class="step-title">تواصل معنا</div><div class="step-desc">أرسل طلبك على الواتساب أو الفيسبوك — نرد فوراً ونسمع احتياجاتك</div></div>
+    <div class="process-step"><div class="step-number">٢</div><div class="step-title">نختار معاً</div><div class="step-desc">نوجهك لاختيار المنتج المناسب من كتالوجنا أو نصمم لك حسب الطلب</div></div>
+    <div class="process-step"><div class="step-number">٣</div><div class="step-title">تأكيد وإنتاج</div><div class="step-desc">بعد تأكيد الطلب نبدأ الإنتاج فوراً بأعلى معايير الجودة</div></div>
+    <div class="process-step"><div class="step-number">٤</div><div class="step-title">توصيل سريع</div><div class="step-desc">نوصل طلبك بسرعة وأمان لأي محافظة في جمهورية مصر العربية</div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="section-header">
+    <div class="section-eyebrow">آراء عملاؤنا</div>
+    <h2 class="section-title">يتحدث عنا عملاؤنا</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal up">
+      <div class="testimonial-quote">"</div>
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="testimonial-text">تعاملنا مع مصنع النخبة منذ 3 سنوات — الجودة ممتازة والأسعار منافسة جداً. التسليم دائماً في الموعد المحدد. ننصح به بشدة لأي مصنع ملابس.</p>
+      <div class="testimonial-author"><div class="author-avatar">م.أ</div><div><div class="author-name">محمد أحمد</div><div class="author-role">مدير مصنع ملابس — القاهرة</div></div></div>
+    </div>
+    <div class="testimonial-card reveal up">
+      <div class="testimonial-quote">"</div>
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="testimonial-text">طلبنا تصاميم مخصصة وكانت النتيجة مذهلة — بالظبط اللي طلبناه. فريق محترف ومتعاون في كل خطوة.</p>
+      <div class="testimonial-author"><div class="author-avatar">س.م</div><div><div class="author-name">سارة محمود</div><div class="author-role">صاحبة ماركة أزياء — الإسكندرية</div></div></div>
+    </div>
+    <div class="testimonial-card reveal up">
+      <div class="testimonial-quote">"</div>
+      <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="testimonial-text">أفضل مورد شرائط في مصر — تنوع هائل في المنتجات والألوان. المنتجات بتفرق فعلاً في الشكل النهائي للملابس.</p>
+      <div class="testimonial-author"><div class="author-avatar">ع.ك</div><div><div class="author-name">عمرو كريم</div><div class="author-role">مدير تصدير — الجيزة</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="section-eyebrow" style="justify-content:center">تواصل معنا الآن</div>
+    <h2 class="cta-title">ابدأ التعاون مع <span class="gold">مصنع النخبة</span></h2>
+    <p class="cta-desc">اطلب عينة مجانية أو استفسر عن أي منتج — فريقنا جاهز للرد فوراً</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/201014533663" class="btn-primary" target="_blank">💬 تواصل على الواتساب</a>
+      <a href="https://www.facebook.com/share/18iSPzAo8f/" class="btn-outline" target="_blank">تابعنا على فيسبوك</a>
+    </div>
+    <div class="cta-contact-grid">
+      <a href="https://wa.me/201014533663" class="contact-item" target="_blank"><span class="contact-icon">📱</span><span class="contact-label">واتساب</span><span class="contact-value">01014533663</span></a>
+      <a href="https://www.facebook.com/share/18iSPzAo8f/" class="contact-item" target="_blank"><span class="contact-icon">📘</span><span class="contact-label">فيسبوك</span><span class="contact-value">النخبة للأشرطة النسيجية</span></a>
+      <div class="contact-item"><span class="contact-icon">📍</span><span class="contact-label">العنوان</span><span class="contact-value">مؤسسة الزكاة، القاهرة</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><img src="images/logo-footer.jpg" alt="النخبة" style="width:44px;height:44px;object-fit:contain;border-radius:4px;display:block;margin:0 auto 0.5rem">مصنع النخبة<span>للأشرطة النسيجية ومستلزمات الإنتاج</span></div>
+  <div class="footer-copy">© 2025 مصنع النخبة — جميع الحقوق محفوظة</div>
+  <ul class="footer-links">
+    <li><a href="#products">المنتجات</a></li>
+    <li><a href="#catalogs">الكتالوجات</a></li>
+    <li><a href="#why-us">لماذا نحن</a></li>
+    <li><a href="#contact">تواصل</a></li>
+  </ul>
+</footer>
+
+<!-- POWERED BY BAR -->
+<div class="powered-by-bar">
+  <a href="https://www.vaiteblek.com" class="powered-by-link" target="_blank" rel="noopener">
+    <img src="images/logo-vaiteblek.png" alt="VAITEBLEK">
+    <span class="powered-by-text">Powered by <b>VAITEBLEK</b></span>
+  </a>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/201014533663" class="wa-float" target="_blank" aria-label="تواصل على واتساب">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// ── Intersection Observer (stat counters + reveal animations)
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    el.classList.add('visible');
+
+    // Stat counter
+    if (el.classList.contains('stat-item')) {
+      const numEl = el.querySelector('.stat-number');
+      const target = parseInt(numEl.dataset.target);
+      const suffix = target === 100 ? '%' : '+';
+      let n = 0, step = target / 55;
+      const t = setInterval(() => {
+        n += step;
+        if (n >= target) { n = target; clearInterval(t); }
+        numEl.textContent = Math.floor(n) + suffix;
+      }, 18);
+    }
+
+    // Staggered children (cards, steps, etc.)
+    el.querySelectorAll('.reveal').forEach((child, i) => {
+      setTimeout(() => child.classList.add('visible'), i * 90);
+    });
+  });
+}, { threshold: 0.14 });
+
+// Observe stat items, section-level reveal triggers, and individual cards
+document.querySelectorAll('.stat-item, .product-card, .feature-item, .process-step, .testimonial-card, .catalog-card, .reveal, .section-header').forEach(el => io.observe(el));
+
+// ── Nav scroll effect
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  const s = window.scrollY > 60;
+  nav.style.background = s ? 'rgba(8,7,5,0.97)' : 'rgba(14,14,14,0.88)';
+  nav.style.borderBottomColor = s ? 'rgba(184,134,11,0.35)' : 'rgba(184,134,11,0.2)';
+}, { passive: true });
+
+// ── Mobile hamburger (simple toggle)
+(function() {
+  const btn = document.getElementById('menu-btn');
+  const links = document.querySelector('.nav-links');
+  if (!btn || !links) return;
+  btn.addEventListener('click', () => {
+    const open = links.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', open);
+  });
+})();
+</script>
+</body>
+</html>
